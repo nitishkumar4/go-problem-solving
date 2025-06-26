@@ -1,4 +1,4 @@
-package __NAME__
+package array-ds
 
 import (
 	. "github.com/onsi/ginkgo/v2"
