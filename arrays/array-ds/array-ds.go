@@ -33,7 +33,7 @@ func reverseArray(a []int32) []int32 {
 
 }
 
-func array-ds() {
+func main() {
     reader := bufio.NewReaderSize(os.Stdin, 16 * 1024 * 1024)
 
     stdout, err := os.Create(os.Getenv("OUTPUT_PATH"))
