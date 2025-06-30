@@ -1,88 +1,56 @@
-package array-ds
+package main
 
 import (
-    "bufio"
-    "fmt"
-    "io"
-    "os"
-    "strconv"
-    "strings"
+	"bufio"
+	"os"
+	"fmt"
+	"strings"
+	"reflect"
+	"strconv"
 )
 
-// Problem:
-// Describe the problem here for future reference.
-// Link: https://www.hackerrank.com/challenges/arrays-ds
-
-/*
- * Complete the 'reverseArray' function below.
- *
- * The function is expected to return an INTEGER_ARRAY.
- * The function accepts INTEGER_ARRAY a as parameter.
- */
-
 func reverseArray(a []int32) []int32 {
-    
-    
-    // Write your code here
-    l := len(a)
-    for i:=0; i<=int(l/2); i++ {
-		a[i], a[l-i] = a[l-i], a[i]
+	// Write your code here
+	l := len(a)
+	for i := 0; i <= int(l/2)-1; i++ {
+		a[i], a[l-i-1] = a[l-i-1], a[i]
 	}
 	return a
-    
-
 }
 
 func main() {
-    reader := bufio.NewReaderSize(os.Stdin, 16 * 1024 * 1024)
-
-    stdout, err := os.Create(os.Getenv("OUTPUT_PATH"))
-    checkError(err)
-
-    defer stdout.Close()
-
-    writer := bufio.NewWriterSize(stdout, 16 * 1024 * 1024)
-
-    arrCount, err := strconv.ParseInt(strings.TrimSpace(readLine(reader)), 10, 64)
-    checkError(err)
-
-    arrTemp := strings.Split(strings.TrimSpace(readLine(reader)), " ")
-
-    var arr []int32
-
-    for i := 0; i < int(arrCount); i++ {
-        arrItemTemp, err := strconv.ParseInt(arrTemp[i], 10, 64)
-        checkError(err)
-        arrItem := int32(arrItemTemp)
-        arr = append(arr, arrItem)
-    }
-
-    res := reverseArray(arr)
-
-    for i, resItem := range res {
-        fmt.Fprintf(writer, "%d", resItem)
-
-        if i != len(res) - 1 {
-            fmt.Fprintf(writer, " ")
-        }
-    }
-
-    fmt.Fprintf(writer, "\n")
-
-    writer.Flush()
-}
-
-func readLine(reader *bufio.Reader) string {
-    str, _, err := reader.ReadLine()
-    if err == io.EOF {
-        return ""
-    }
-
-    return strings.TrimRight(string(str), "\r\n")
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Enter number of elements in array:")
+	size, _ := reader.ReadString('\n') // Read full line
+	size = strings.TrimSpace(size) // remove newline and spaces
+	fmt.Println(size)
+	
+	fmt.Print("Enter space seperated array elements:")
+	input, _ := reader.ReadString('\n') // Read full line
+	input = strings.TrimSpace(input) // remove newline and spaces
+	fmt.Println(input)
+	
+	array := strings.Split(input, " ")
+	fmt.Println(array)
+	
+	fmt.Println("Type:", reflect.TypeOf(array))
+	
+	var intArray []int32
+	
+	for i:=0; i<len(array); i++ {
+		n, _ := strconv.ParseInt(array[i],10,32)
+		intArray = append(intArray, int32(n))
+	}
+	
+	fmt.Println("Integer Array", intArray)
+	fmt.Println("Type:", reflect.TypeOf(intArray))
+	
+	fmt.Print("Reversed array:")
+	fmt.Println(reverseArray(intArray))
 }
 
 func checkError(err error) {
-    if err != nil {
-        panic(err)
-    }
+	if err != nil {
+		panic(err)
+	}
 }
