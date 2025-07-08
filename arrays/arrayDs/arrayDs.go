@@ -1,6 +1,6 @@
 package arrayDs
 
-func reverseArray(a []int32) []int32 {
+func ReverseArray(a []int32) []int32 {
 	// Write your code here
 	l := len(a)
 	for i := 0; i <= int(l/2)-1; i++ {

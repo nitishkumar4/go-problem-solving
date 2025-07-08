@@ -6,6 +6,8 @@ import (
 	"os"
 	"strconv"
 	"strings"
+
+	ds "github.com/nitishkumar4/go-problem-solving/arrays/array-ds"
 )
 
 func main() {
@@ -29,7 +31,7 @@ func main() {
 	}
 
 	// call reverseArray
-	newArray := reverseArray(arrayOfInts)
+	newArray := ds.ReverseArray(arrayOfInts)
 	if newArray != nil {
 		fmt.Println("Reversed Array: ", newArray)
 	}
