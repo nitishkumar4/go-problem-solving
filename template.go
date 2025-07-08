@@ -1,4 +1,4 @@
-package __NAME__
+package main
 
 import (
 	"fmt"
@@ -16,6 +16,6 @@ func Solve(input interface{}) interface{} {
 
 func main() {
 	// Example usage
-	input := nil // Replace with actual input
+	var input interface{} // Replace with actual input
 	fmt.Println("Output:", Solve(input))
 }

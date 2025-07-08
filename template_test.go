@@ -1,4 +1,4 @@
-package __NAME__
+package main
 
 import (
 	. "github.com/onsi/ginkgo/v2"
