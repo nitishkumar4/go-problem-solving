@@ -1,4 +1,4 @@
-package __NAME__
+package twoDArrayDs
 
 // Problem:
 // Describe the problem here for future reference.
