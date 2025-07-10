@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"go-problem-solving/dataStructures/arrays"
 	"os"
 	"strconv"
 	"strings"
@@ -30,7 +31,7 @@ func main() {
 	}
 
 	// call ReverseArray
-	newArray := arrayDs.ReverseArray(arrayOfInts)
+	newArray := arrays.ReverseArray(arrayOfInts)
 	if newArray != nil {
 		fmt.Println("Reversed Array: ", newArray)
 	}
