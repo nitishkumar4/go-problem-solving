@@ -6,8 +6,6 @@ import (
 	"os"
 	"strconv"
 	"strings"
-
-	"go-problem-solving/dataStructures/arrays/arrayDs"
 )
 
 func main() {
