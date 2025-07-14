@@ -18,7 +18,7 @@ func main() {
 	size, _ := reader.ReadString('\n')
 	intSize, _ := strconv.ParseInt(strings.TrimSpace(size), 10, 32)
 
-	fmt.Print("Enter the space seperated array elements ")
+	fmt.Print("Enter the space separated array elements ")
 	array, _ := reader.ReadString('\n')
 
 	// parse array elements from the input string
