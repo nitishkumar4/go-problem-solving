@@ -1,11 +1,11 @@
 package __NAME__
 
-// Problem:
-// Describe the problem here for future reference.
-// Link: https://example.com/problem-link
+import (
+	"fmt"
+)
 
 // Solve performs the core logic.
 func Solve(input interface{}) interface{} {
-	// TODO: implement logic here
+	fmt.Println("TODO: implement logic here")
 	return nil
 }
